@@ -1,0 +1,7 @@
+.scssc
+.sass-cache
+templates/project/source/stylesheets
+templates/project/source/.coffeescript-cache/**/*
+templates/project/source/fire_app_log.txt
+node_modules
+dist
