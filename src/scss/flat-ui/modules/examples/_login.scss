@@ -6,12 +6,13 @@
 $form-color: mix($brand-primary, $inverse, 9%);
 
 .login {
-  background: url(if($flat-ui-sass-asset-helper, flat-ui-image-path("../images/login/imac.png"), "../images/login/imac.png")) 0 0 no-repeat;
   background-size: 940px 778px;
-  color: $inverse;
   margin-bottom: 77px;
-  padding: 0 38px 30px 30px;
   position: relative;
+  .demo-samples & {
+    // background: url(if($flat-ui-sass-asset-helper, flat-ui-image-path("../images/login/imac.png"), "../images/login/imac.png")) 0 0 no-repeat;
+    padding: 0 30px 38px 38px;
+  }
 }
 
 .login-screen {
@@ -22,11 +23,14 @@ $form-color: mix($brand-primary, $inverse, 9%);
 }
 
 .login-icon {
-  left: 68px;
+  left: 43px;
   position: absolute;
   top: 72px;
   width: 96px;
-
+  color: $inverse;
+  .demo-samples & {
+    left: 68px;
+  }
   > img {
     display: block;
     margin-bottom: 6px;
@@ -107,6 +111,6 @@ $form-color: mix($brand-primary, $inverse, 9%);
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 2) {
   .login {
     background-image: url(if($flat-ui-sass-asset-helper, flat-ui-image-path("../images/login/imac-2x.png"), "flat-ui/login/imac-2x.png"));
-  }  
-}    
+  }
+}
 
