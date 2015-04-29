@@ -5,7 +5,6 @@ include ../mixin/mixin-lorem-ipsum.jade
 		h1 電子書流通服務平台管理
 	.row
 		include ../mould-partials/navbar--b
-
 	table(class="table table-striped")
 		thead
 			tr
@@ -23,9 +22,8 @@ include ../mixin/mixin-lorem-ipsum.jade
 					td
 						| #{part.share1} / #{part.share2}
 					td
-						.ibw
-							!= part.upperlimit
-					td
 						| #{part.enablestate}
 					td
-						!= part.edit
+						| #{part.upperlimit}
+					td
+						a(href='javascript') #{part.edit}

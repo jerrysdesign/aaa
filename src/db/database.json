@@ -84,54 +84,54 @@
 			"type": "一般",
 			"share1": "50",
 			"share2": "30",
-			"upperlimit": "<input type='checkbox' checked data-toggle='switch'/>",
+			"upperlimit": "啟用",
 			"enablestate": "5000",
-			"edit": "<a href='javascript:;'>編輯</a>"
+			"edit": "編輯"
 		},
 		{
 			"title": "台北市立仁愛國民中學",
 			"type": "一般",
 			"share1": "50",
 			"share2": "30",
-			"upperlimit": "<input type='checkbox' checked data-toggle='switch'/>",
+			"upperlimit": "啟用",
 			"enablestate": "5000",
-			"edit": "<a href='javascript:;'>編輯</a>"
+			"edit": "編輯"
 		},
 		{
 			"title": "台北市立金華國民中學",
 			"type": "一般",
 			"share1": "50",
 			"share2": "30",
-			"upperlimit": "<input type='checkbox' data-toggle='switch'/>",
+			"upperlimit": "啟用",
 			"enablestate": "5000",
-			"edit": "<a href='javascript:;'>編輯</a>"
+			"edit": "編輯"
 		},
 		{
 			"title": "高雄市私立樂育國民中學",
 			"type": "一般",
 			"share1": "50",
 			"share2": "30",
-			"upperlimit": "<input type='checkbox' checked data-toggle='switch'/>",
+			"upperlimit": "停用",
 			"enablestate": "5000",
-			"edit": "<a href='javascript:;'>編輯</a>"
+			"edit": "編輯"
 		},
 		{
 			"title": "高雄市立鳳西國民中學",
 			"type": "一般",
 			"share1": "50",
 			"share2": "30",
-			"upperlimit": "<input type='checkbox' checked data-toggle='switch'/>",
+			"upperlimit": "停用",
 			"enablestate": "5000",
-			"edit": "<a href='javascript:;'>編輯</a>"
+			"edit": "編輯"
 		},
 		{
 			"title": "台北市立南門國民中學",
 			"type": "一般",
 			"share1": "50",
 			"share2": "30",
-			"upperlimit": "<input type='checkbox' data-toggle='switch'/>",
+			"upperlimit": "停用",
 			"enablestate": "5000",
-			"edit": "<a href='javascript:;'>編輯</a>"
+			"edit": "編輯"
 		}
 	],
 
