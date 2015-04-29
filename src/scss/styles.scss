@@ -14,6 +14,12 @@ th, td {
 		font-size: 11px;
 	}
 }
+/* hack */
+//.inline-block wrapper
+.ibw {
+	line-height: 0;
+}
+
 /* Main sidebar */
 
 %radius-pic {
