@@ -23,7 +23,8 @@ $belize-hole:               #2980b9 !default;
 $amethyst:                  #9b59b6 !default;
 $wisteria:                  #8e44ad !default;
 
-$wet-asphalt:               #34495e !default;
+$wet-asphalt:               #5a7391 !default;
+// $wet-asphalt:               #34495e !default;
 $midnight-blue:             #2c3e50 !default;
 
 $sun-flower:                #f1c40f !default;
@@ -70,10 +71,12 @@ $link-hover-color:          $turquoise !default;
 //== Typography
 //
 //## Font, line-height for body text, headings, and more.
-
 $font-family-base:          "Lato", Helvetica, Arial, sans-serif !default;
 $font-family-demo:          "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-monospace:     Monaco, Menlo, Consolas, "Courier New", monospace !default;
+// $font-family-base:          'Helvetica Neue', 'cwTeXHei', Helvetica, Arial, sans-serif !default;
+// $font-family-demo:          'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+// $font-family-monospace:     Monaco, Menlo, Consolas, 'Courier New', monospace !default;
 $font-size-base:            14px !default;
 
 $local-font-path:               "../fonts/lato/" !default;
