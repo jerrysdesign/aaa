@@ -411,7 +411,6 @@ Credits
 [Angular Gmap](https://github.com/dylanfprice/angular-gm-bower)  
 [Angular Knob](https://github.com/yunlzheng/angular-knob)  
 [Angular UI Utils](https://github.com/angular-ui/ui-utils)  
-[Animated Climacons](https://github.com/noahblon/animated-climacons)  
 [AngularUI Calendar](https://github.com/angular-ui/ui-calendar/)  
 [Bootstrap Wysiwyg](https://github.com/mindmup/bootstrap-wysiwyg)  
 
@@ -439,8 +438,6 @@ Credits
 
 [Feather Icons](http://colebemis.com/feather/)  
 [Font Awesome](http://fortawesome.github.io/Font-Awesome/)  
-[Climacons](http://adamwhitcroft.com/climacons/)  
-[Weather Icons](http://erikflowers.github.io/weather-icons/)  
 <br>
 
 <h4 class="mt0">Font  </h4>

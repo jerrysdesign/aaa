@@ -26,9 +26,7 @@
       "icon": {
         "ICON": "圖標",
         "FEATHER": "Feather Icons",
-        "FA" : "Font Awesome",
-        "CLIMA": "Climacons",
-        "WEATHER": "Weather Icons"
+        "FA" : "Font Awesome"
       },
       "form": {
         "FORM": "表單",

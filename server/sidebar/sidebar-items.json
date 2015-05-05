@@ -78,9 +78,7 @@
     "icon": "icon-play",
     "subnav": [
       {"text": "Feather Icons", "sref": "app.icons-feather", "translate": "sidebar.nav.icon.FEATHER" },
-      {"text": "Font Awesome", "sref": "app.icons-fa", "alert": "+400", "translate": "sidebar.nav.icon.FA"  },
-      {"text": "Climacons", "sref": "app.icons-climacon", "translate": "sidebar.nav.icon.CLIMA" },
-      {"text": "Weather Icons", "sref": "app.icons-weather", "alert": "+100", "translate": "sidebar.nav.icon.WEATHER" }
+      {"text": "Font Awesome", "sref": "app.icons-fa", "alert": "+400", "translate": "sidebar.nav.icon.FA" }
     ],
     "translate": "sidebar.nav.icon.ICON"
   },

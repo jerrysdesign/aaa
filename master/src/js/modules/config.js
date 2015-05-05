@@ -117,16 +117,6 @@ App.config(['$stateProvider','$urlRouterProvider', '$controllerProvider', '$comp
             templateUrl: basepath('icons-fa.html'),
             controller: 'NullController'
         })
-        .state('app.icons-weather', {
-            url: '/icons-weather',
-            templateUrl: basepath('icons-weather.html'),
-            controller: 'NullController'
-        })
-        .state('app.icons-climacon', {
-            url: '/icons-climacon',
-            templateUrl: basepath('icons-climacon.html'),
-            controller: 'NullController'
-        })
         .state('app.form-inputs', {
             url: '/form-inputs',
             templateUrl: basepath('form-inputs.html'),

@@ -9,7 +9,6 @@ App
     scripts: {
       'animate':            ['app/vendor//animate.css/animate.min.css'],
       'icons':              ['app/vendor/fontawesome/css/font-awesome.min.css',
-                             'app/vendor/weather-icons/css/weather-icons.min.css',
                              'app/vendor/feather/webfont/feather-webfont/feather.css'],
       'sparklines':         ['app/js/sparklines/jquery.sparkline.min.js'],
       'slider':             ['app/vendor/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js',
