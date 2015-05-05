@@ -134,7 +134,7 @@ Tasks:
 
 - `gulp dev` 將啟動任務管理工具與 LiveReload, 只要專案 source 中的任何變更都會觸發 LiveReload，需確保使用 Chrome 與安裝 LiveReload 插件.
 
-- `gulp dev:server` 將啟動任務管理工具與 LiveReloadwill, 使用 nodejs 的 serve application, 路徑為 http://localhost:3000
+- `gulp dev:server` 將啟動任務管理工具與 LiveReload, 使用 nodejs 的 serve application, 路徑為 http://localhost:3000
 
 - `gulp vendor:base` 將生成 __base.js__
 
