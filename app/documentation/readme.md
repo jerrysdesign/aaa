@@ -1,30 +1,9 @@
 eLibrary
 ---
 
-eLibrary is a Bootstrap Admin theme powered by AngularJS.  
-This document describe the structure and use of the components included with the theme.
-
-> Before requesting support, please read carefully and look for information on the topic that you think is related to the issue. There are big chances you could find the answer here and it would save you a lot of time!
-
-[Contact Support >](http://themeforest.net/user/geedmo#contact)
-
-### Getting started
-
-Since AngularJs applications load the html via http requests (html views, partials, json data, etc), to get started with this theme you need a webserver.  
-You can use the built-in server by using the gulp command or download [XAMPP](https://www.apachefriends.org/index.html) to load the app from a local webserver. Any other options like nodejs, iis, etc is also allowed. Make sure to choose a server that you fill comfortable with the configuration system.
-
-#### Quick Tips
-
-- Find an existing asset and modify it to learn how it works.
-- Explore the sources for ideas and sample code.
-- Use Firebug or Chrome Developer Tools to find bugs on your website.
-- Getting an error message? Someone might have seen it too, try a quick Google search for a fix.
-
-
-
 ### Structure
 
-Project folders organization
+專案資料夾結構
 
 ```
 `-- app/
@@ -59,51 +38,52 @@ Project folders organization
 
 __app/__ folder
  
-This folder contains the compiled files. This files are ready to deploy on your server. 
+包含編譯後之文件，佈署於主機上使用
  
 - pages/
-This folder contains the compiled html files for the single pages (out of the app).
+此資料夾內容為編譯後之單頁頁面之檔案
 - views/
-This folder contains the compiled html files for the views and partials used for the app. 
+此資料夾內容為編譯頁後之檔案，view 與 partials 
   - partials/
-    Contains compiles html files that are used in views
+    使用於 view 之內容文件
 - langs/
-This folder contains the json files use for translation.
+此資料夾內容為翻譯用之 json
 - css/
-Contains the static css files generated for the app
+此資料夾內容為編譯後之 css
 - js/
-Contains the concatenated javascript source
+此資料夾內容為串接之 javascript 
 - img/
-Contains the theme images
+此資料夾內容為使用之圖檔 
+
 
 __master/__ folder
- 
-This folder contains the source files that you can (optionally) compile to get the static version (html, css, js). 
+
+此資料夾包含的來源檔案，用來編譯得到的靜態版本（HTML，CSS，JS）。
  
 - jade/
-This folder contains JADE files that are compiled into static html via gulp tasks.
+此資料夾內容為 JADE 檔，透過 GULP 編譯靜態 html 
   - 
 - less/
-This folder contains the LESS files for the core styles and bootstrap styles. 
+此資料夾內容為 LESS 檔，透過 GULP 編譯靜態 CSS 
   - app/ 
-    contains the LESS source with the app components
+    contains the LESS source with the components
   - bootstrap/
     contains the LESS source files for Bootstrap
 - js/
-Here you will find pure JS files. All this files are concatenated into the file app.js. 
+此資料夾內容為 JS 檔，所有檔案會合併至 app.js
   - modules/
-    contains all controllers, directives, etc previously separated in folder using the modular pattern.
+    此資料夾內容為所有 controllers、directives...等modular pattern.
   - custom/ 
-    here you will put your own custom controllers, directives, etc
+    自定 controllers、directives...等
 
  
 __vendor/__ folder
- 
-This folder contains the vendor files used to include plugins and other components. This folder is handled via bower so you can remove or upgrade the vendor components using such tool.
 
-__server/__ folder
+此資料夾內容為 vendor 之檔案，使用於 include plugin 與 其他 元組件， 該資料夾透過 bower 管理
  
-This folder contains server side files (only json included in the package) Curretnly this folder contains only files used for the charts, calendar and sidebar components.
+__server/__ folder
+
+此資料夾內容為 server side 檔案， 目前內容僅側邊欄使用
 
 Usage
 -----
@@ -112,31 +92,8 @@ Usage
 
 To add your custom code you can follow this guideline
 
-__Static files__
-
-Go to folder app/ to find all html, js and css files.  
-Create a file custom.js and put it into the folder app/js, then linkit from the index.html file.  
-Create a file custom.css and put it into the folder app/js, then linkit from the index.html file after the app.css.  
-
-__Source files__
-
-Source files are located under the folder master/ and requires gulp to compile them into static files.  
-To add custom js, create your files into the folder master/js/custom. All this files will be concatenated after all files into the folder modules.  
-Your custom LESS should be @imported at the bottom of the file app.less.  
-Finally, jade files can be added directly into the folder master/jade and they will be compiled automatically to its html version into the folder app/views.
 
 ### Servers
-
-Here are some resources you might find useful according to the server you want to use
-
-- ExpressJS  
-  http://briantford.com/blog/angular-express
-- Visual Studio  
-  http://stackoverflow.com/questions/19516829/allow-loading-of-json-files-in-visual-studio-express-2013-for-web
-- Django  
-  http://django-angular.readthedocs.org/en/latest/integration.html
-- Ruby on Rails  
-  http://dillonbuchanan.com/programming/ruby-on-rails-angularjs-resources/
 
 
 
@@ -145,82 +102,72 @@ Build
 
 ### Tools
 
-> This is only required if you want to work with JADE, LESS and modular JS. Otherwise, you don't need to deal with those language to work with the theme.
+> 本專案必須使用 JADE, LESS 與 modular JS
 
-__Node.js__ is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+__Node.js__ 
 
-__Gulp__ is a task manager, you can define different tasks to run certain commands. Those commands does the compilation job for JADE and LESS, and concats the JS files.
+__Gulp__ 任務管理工具
 
-__Bower__ is a depency manager, it works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you’re looking for. ower keeps track of these packages in a manifest file, bower.json. 
+__Bower__ 套件管理工具 
 
-The package includes under the master/ folder the file __gulpfile.js__ and __package.json__ to install the required components to compile the source files.
+設定檔 __gulpfile.js__ 與 __package.json__ 放至於 master/ 之下，用來安裝與編譯元件之檔案
 
-The __bower.json__ file is included under the root folder.
+__bower.json__ 檔案於 root 之下，用來安裝套件之檔案
 
-__Installing tools __
+__Installing Tools __
 
-Follow this steps to start installing this tools
+按以下步驟逕行安裝工具
 
-- To install node and npm, go to http://nodejs.org/
-- Make sure both command __node__ and __npm__ are in the enviroment variable PATH
-- Run __npm install -g bower__
+- 參考 http://nodejs.org/ 安裝 node and npm
+- 確認 __node__ 與 __npm__ 於開發環境 command 之變數路徑
+- 執行 __npm install -g bower__ 全域安裝
 
 __Compiling sources__
 
-- Open a terminal, go to master/ folder and run the command __npm install__. This command will install gulp and all dependencies. 
-- Finally run __gulp__ to start the task manager 
+- 打開 terminal, cd master/ 資料夾, run __npm install__. 該命令會安裝 gulp 依賴之套件 
+- 執行 __gulp__ 開始 gulp 任務管理工具 
 
-If everything goes fine, you should see the messages in the terminal telling you that most the task are done ok. 
-
-- To install vendor dependencies, run __bower install__
+- 執行 __bower install__ 安裝 vendor 之依賴套件
 
 
 Tasks:  
 
-- `gulp dev` will start the task manager with livereload so any change in the source will trigger a page reload. Make sure you have the LiveReload plugin for Chrome.
+- `gulp dev` 將啟動任務管理工具與 LiveReload, 只要專案 source 中的任何變更都會觸發 LiveReload，需確保使用 Chrome 與安裝 LiveReload 插件.
 
-- `gulp dev:server` will to start the task manager with livereload and also serve the application directly from nodejs. Your localserver will be accessible at http://localhost:3000
+- `gulp dev:server` 將啟動任務管理工具與 LiveReloadwill, 使用 nodejs 的 serve application, 路徑為 http://localhost:3000
 
-- `gulp vendor:base` will generate the __base.js__ file with the required scripts to load the page. Requires bower install
+- `gulp vendor:base` 將生成 __base.js__
 
-- `gulp vendor:copy` will copy all files in file vendor.json to the app/vendor folder. Requires bower install
+- `gulp vendor:copy` 將拷貝所有 vendor.json 至 app/vendor 資料夾
 
-**Note**: You can use tasks defined in gulp directly from command line. For example, `gulp dev webserver` or just `gulp webserver`
+**Note**: 也可以使用指令 `gulp dev webserver` 或只使用 `gulp webserver` 
 
-**Note2**: All customization can be done by editing the content of the file gulpfile.js
 
 ### Javascript
 
-The main Javascript is divided in two main files that controls the app
+控制該專案的 Javascript 主要分為以下兩個部分
 
-__base.js__: contains the scripts to start the application. It is generated automatically from vendor folder and files included are defined in file gulpfile.js (variable vendorBaseScripts)
+__base.js__: 包含啟動專案，這是從 vendor 資料夾透過 gulpfile.js 自動生成
 
-__app.js__: contains the modules used in the application (controllers, directive, etc). It's generated by concatenating the files in the master/js folder.
+__app.js__: 包含在專案中使用之 modules (controllers, directive... 等). 這是從 master/js 資料夾串接生成.
 
 ### JADE 
 
-Jade is a terse language for writing HTML templates. This files are not served directly to browser, they are used only to generate static HTML files.  
-To serve this files you will need a server like [ExpressJS](http://expressjs.com/guide/using-template-engines.html)
+Jade 是一個 HTML templates 引擎語言, 無法直接透過瀏覽器閱讀
 
 ### LESS
 
-LESS files for the theme components and for Bootstrap compiles into the file __app.css__. This file contains the bootstrap styles at the beginning and the application custom styles after them so any custom styles overrides the default Bootstrap style.
+LESS 為 css 預處理器, 亦無法直接透過瀏覽器閱讀, 
 
-There's also a file generated automatically called __apprtl.css__ which is automatically generated with the same styles but inverted for RTL layouts.
 
 ### Vendor
 
 #### Vendor folder
 
-Vendor script dependencies are managed by bower. Just run __bower install__ in folder master/ and all dependencies will be installed.
+Vendor script 依賴於 bower 管理器. 之需執行 __bower install__ 於 master/ 資料夾即可安裝使用之套件.
 
-Most of the time bower downloads many files that are not necessary. Because of that, there's a task `vendor:copy` that will copy all files required by the app from the __bower_components__ folder to the __app/vendor__ folder.  
-This files are configured in file __vendor.json__ which contains the path for all necessary files required by the app components. Those files are usually required via the lazy load module but you can include fonts, svg, etc.
-
-#### Vendor base
-
-The vendor base script, __base.js__ is generated by the task `vendor:base`. This task concats and compress all files that needs to be loaded when the app is requested for first time.  
-All files included here are defined in file gulpfile.js
+大多時候 bower 會下載許多沒有必要的檔案, 因此使用 `vendor:copy` 任務指令, 會至 __bower_components__ 資料夾複製所需的檔案至  __app/vendor__ 資料夾
+這些檔案在  __vendor.json__ 中配置，包含像 lazy load module...等,  但也可以 include 字型, svg...等
 
 
 
@@ -229,7 +176,7 @@ Features
 
 ### Layout
 
-The following layout markup representation is in fact divided into views but this code will give a good perspective of the final organization after the app is rendered:
+rendered:
 
 ``` html
 <html>
@@ -266,40 +213,34 @@ The following layout markup representation is in fact divided into views but thi
 </html>
 ```
 
-Layout can be changed via the following classed applied to the __body__ tag
+Layout 可於 __body__ tag, 透過以下 class 控制
 
-`.layout-fixed`: Makes navbars become fixed while the user can scoll only content
+`.layout-fixed`: 讓 navbars fixed
 
-`.layout-boxed`: Limits the width of the main wrapper element
+`.layout-boxed`: 固定最大寬度並置中
 
-`.aside-collapsed`: Condenses the sidebar showing only icons
+`.aside-collapsed`: 縮小惻然僅顯示 icon
 
-`.aside-toggle`: used internally for mobiles to hide the sidebar off screen
+`.aside-toggle`: 用於手機時將側欄隱藏於畫面之外
 
 ### Lazy Load
 
-This app requires only the necessary scripts according to the view that is loaded saving tons unnecessary request to the server.
+非同步加載請求資料[ocLazyLoad](https://github.com/ocombe/ocLazyLoad)
 
-The lazy load is handled by a custom core function based on the plugin [ocLazyLoad](https://github.com/ocombe/ocLazyLoad)
-
-To configure the lazy scripts, you need to edit the constants `appDependencies` (constants.js)  
-Then edit the app configuration (config.js) where you will find the routes configuration and add or edit the params using the special function `requireDeps` which handles the scripts request order for the current route.
-
-### RTL
-
-The Right To Left (RTL) version of the app is handled by the file `apprtl.css`. This file is generated using a tool called [css-flip](https://github.com/twitter/css-flip) which inverts most the css properties to change the page orientation. To make use of this tool you can download the standalone version or just compile the source with gulp.
-There's a global property `$rootScope.isRTL` used to detect when the site is in RTL mode. 
+如需變更設定由 `appDependencies` (constants.js)  
+然後編輯 (config.js)
+special function `requireDeps`
 
 ### Routes
 
-This app uses for routing the [AngularUI Router](https://github.com/angular-ui/ui-router) with nested states making more simple to manage the routing system and load resource in cascade.
+[AngularUI Router](https://github.com/angular-ui/ui-router) 
 
-This routes are defined in the file __config.js__
+如需變更設定 __config.js__
 
 ### Translation
 
-The translation system uses the [AngularUI Translate](https://github.com/angular-translate/angular-translate) module.  
-This modules simplifies the translation system by loading translate references from a JSON file and replacing the content where the reference has been used.
+[AngularUI Translate](https://github.com/angular-translate/angular-translate)
+
 
 Examples
 
@@ -311,12 +252,10 @@ Examples
 <a href="#" title="{{ 'reference.NAME' | translate }">Link</a>
 ```
 
-The JSON files with translation refernces are located in the folder app/langs and it is named using the corresponding locale ID for a language. [Learn More](https://docs.angularjs.org/guide/i18n)
-
 ### Sidebar
 
-The sidebar is created dynamically from a JSON file.  
-Such file is called `sidebar-items.json` and it's located under the folder __server__.
+側欄由 JSON 檔動態加載而成, .  
+檔案為 `sidebar-items.json` 並放至於 __server__ 資料夾之下.
 
 __JSON properties format:__
 
@@ -343,13 +282,13 @@ To create a heading or separator
 ]
 ```
 
-To make the sidebar works properly it requires the following
+確保側欄正常 work, 
 
 - SidebarController
 - SidebarDirective
 - SidebarMenuService
 
-> When the json file has a wrong format an alert message will be displayed.
+> 當JSON文件有格式錯誤會顯示警告訊息
 
 ### Markdown Docs
 
@@ -368,17 +307,6 @@ Via the `flatdoc` directive you can use it like this
   <!-- end directive -->
 </flatdoc>
 ```
-### Themes
-
-Themes are handled via background classes (bg-*) you can watch them [here](#/app/palette)  
-Those classes will style all elements inside allowing to change the app style in the Angular way.
-
-#### How it works?
-
-The __SettingsController__ defines an array of element to apply the `.bg-*` classes combination.   
-This array is used to generate the color combination for each theme using styles defined in the `settings.less` file.
-Once a color combination is clicked, Angular updates the model settings with the current combination.  
-This combination is then saved within the global `$rootScope.app` configuration to be restored later.
 
 ### Directives
 
@@ -461,59 +389,6 @@ Drag and drop any panel based on jQueryUI portlets
 
 Make a content box scrollable
 
-### Constants
-
-#### appDependencies
-
-Defines the scripts path that will be used with the lazy load manager. 
-
-Format:
-
-``` js
-// Put here all jQuery script (and not angular js)
-scripts: {
-  'friendly-name' : ['path/to/plugin.js', 'path/to/plugin.css', '...'],
-  ...
-}
-// Put here all angular js modules that needs to be instantiated
-modules: {
-  { 
-    name: 'toaster', files: ['path/to/module.js', 'path/to/module.css', '...']
-  },
-  ...
-}
-```
-Learn more by this constant by looking into the file __config.js__
-
-#### appColors
-
-Defines the brand colors used in the css accessible from JS
-
-``` js
-App.controller('ExampleCtrl', ['appColors', function(colors) {
-  console.log( colors.primary ); 
-  // prints #5d9cec
-}]);
-```
-
-This constant is used  together with the __service colors__ to provide access from the $scope to each color by its name
-
-Example 
-
-``` html
-<div sparkline data-bar-color="{{colorByName('primary')}}" ></div>
-```
-
-#### appMediaquery
-
-Defines the media queries used in the css accessible from JS
-
-``` js
-App.controller('ExampleCtrl', ['appMediaquery', function(mq) {
-  console.log( mq['mobile'] ); 
-  // prints 480
-}]);
-```
 
 Credits
 -------
