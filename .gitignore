@@ -16,20 +16,20 @@ dist
 # bootstrap_angularjs
 #=========================
 
-master/bower_components
-master/node_modules
+master/bower_components/**/*
+master/node_modules/**/*
 
 
 #—————————————————————————
 #project temp
 #—————————————————————————
 
-app/css
-app/pages
-app/vendor
+app/css/**/*
+app/pages/**/*
+app/vendor/**/*
 app/js/app.js
 app/js/base.js
-app/views
+app/views/**/*
 
 
 #=========================
