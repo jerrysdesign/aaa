@@ -29,7 +29,7 @@ app/pages
 app/vendor
 app/js/app.js
 app/js/base.js
-app/view
+app/views
 
 
 #=========================
