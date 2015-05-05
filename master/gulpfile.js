@@ -31,51 +31,52 @@ var ignored_files = '!'+hidden_files;
 // SOURCES CONFIG 
 var source = {
   scripts: {
-    app:    [ 'src/js/app.init.js',
-              'src/js/modules/*.js',
-              'src/js/modules/**/*.js',
-              'src/js/custom/**/*.js',
-              ignored_files
-            ],
+    app: [
+        'src/js/app.init.js',
+        'src/js/modules/*.js',
+        'src/js/modules/**/*.js',
+        'src/js/custom/**/*.js',
+        ignored_files
+    ],
     watch: ['src/js/*.js','src/js/**/*.js']
   },
   templates: {
     app: {
-        files : ['src/jade/index.jade'],
+        files: ['src/jade/index.jade'],
         watch: ['src/jade/index.jade', hidden_files]
     },
     views: {
-        files : ['src/jade/views/*.jade', 'jade/views/**/*.jade', ignored_files],
+        files: ['src/jade/views/*.jade', 'jade/views/**/*.jade', ignored_files],
         watch: ['src/jade/views/**/*.jade']
     },
     pages: {
-        files : ['src/jade/pages/*.jade'],
+        files: ['src/jade/pages/*.jade'],
         watch: ['src/jade/pages/**/*.jade']
     }
   },
   styles: {
     app: {
-      main: ['src/less/app.less'],
-      dir:  'src/less',
-      watch: ['src/less/**/*.less']
+        main: ['src/less/app.less'],
+        dir:  'src/less',
+        watch: ['src/less/**/*.less']
     }
   }
 };
 
 // BUILD TARGET CONFIG 
 var build = {
-  scripts: {
-    app: {
-      main: 'app.js',
-      dir: '../app/js'
+    scripts: {
+        app: {
+            main: 'app.js',
+            dir: '../app/js'
+        },
     },
-  },
   styles: '../app/css',
   templates: {
-    app: '..',
-    views: '../app/views',
-    pages: '../app/pages'
-  }
+        app: '..',
+        views: '../app/views',
+        pages: '../app/pages'
+    }
 };
 
 var vendor = {
@@ -112,12 +113,12 @@ var vendor = {
     './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
     // Loading Bar
     './bower_components/angular-loading-bar/build/loading-bar.js'
-  ],
+    ],
 };
 
 var doc = {
-  source: '../app/documentation/readme.md',
-  dest: '../'
+    source: '../app/documentation/readme.md',
+    dest: '../'
 };
 
 
@@ -227,10 +228,10 @@ gulp.task('templates:views', function() {
 gulp.task('webserver', function() {
   gulp.src( build.templates.app )
     .pipe(webserver({
-      host:             'localhost',
-      port:             '3000',
-      livereload:       true,
-      directoryListing: false
+        host: 'localhost',
+        port: '3000',
+        livereload: true,
+        directoryListing: false
     }));
 });
 
@@ -238,7 +239,7 @@ gulp.task('webserver', function() {
 // ----------------------
 
 gulp.task('set:dev', function() {
-  isProduction = false;
+    isProduction = false;
 });
 
 
@@ -258,12 +259,12 @@ gulp.task('vendor:base', function() {
 // copy file from bower folder into the app vendor folder
 gulp.task('vendor:copy', function() {
 
-  var vendorSrc = require('./vendor.json'),
-      path = require('path');
+    var vendorSrc = require('./vendor.json'),
+    path = require('path');
 
-  gulp.src(vendorSrc, {base: 'bower_components'})
-      .pipe( gulp.dest(vendor.folder) )
-      ;
+    gulp.src(vendorSrc, {base: 'bower_components'})
+    .pipe( gulp.dest(vendor.folder) )
+    ;
 
 });
 
@@ -274,7 +275,7 @@ gulp.task('vendor:copy', function() {
 gulp.task('docs', function () {
     return gulp.src(doc.source)
         .pipe(markdownpdf({
-          cssPath: '../app/css/app.css'
+            cssPath: '../app/css/app.css'
         }))
         .pipe(rename(function(path) {
             path.basename = "documentation";
@@ -299,17 +300,17 @@ gulp.task('watch', function() {
     gulp.watch(source.templates.pages.watch,   ['templates:pages']);
     gulp.watch(source.templates.views.watch,   ['templates:views']);
 
-  } catch(e) {
-    console.log(e);
-  }
+    } catch(e) {
+        console.log(e);
+    }
 
-  gulp.watch([
-      '../app/**'
-  ]).on('change', function(event) {
-      livereload.changed();
-      // console.log('File', event.path, 'was', event.type);
-      // console.log('Triggering LiveReload..');
-  });
+    gulp.watch([
+        '../app/**'
+    ]).on('change', function(event) {
+        livereload.changed();
+        // console.log('File', event.path, 'was', event.type);
+        // console.log('Triggering LiveReload..');
+    });
 
 });
 
@@ -318,14 +319,14 @@ gulp.task('watch', function() {
 //---------------
 
 var tasks = [
-          'vendor:base',
-          'scripts:app',
-          'styles:app',
-          'styles:app:rtl',
-          'templates:app',
-          'templates:pages',
-          'templates:views'
-        ];
+    'vendor:base',
+    'scripts:app',
+    'styles:app',
+    'styles:app:rtl',
+    'templates:app',
+    'templates:pages',
+    'templates:views'
+];
 
 var tasksDev = ['set:dev'].concat(tasks).concat(['watch']);
 
