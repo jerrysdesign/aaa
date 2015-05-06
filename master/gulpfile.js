@@ -32,33 +32,33 @@ var ignored_files = '!'+hidden_files;
 var source = {
   scripts: {
     app: [
-        'src/js/app.init.js',
-        'src/js/modules/*.js',
-        'src/js/modules/**/*.js',
-        'src/js/custom/**/*.js',
+        'js/app.init.js',
+        'js/modules/*.js',
+        'js/modules/**/*.js',
+        'js/custom/**/*.js',
         ignored_files
     ],
-    watch: ['src/js/*.js','src/js/**/*.js']
+    watch: ['js/*.js','js/**/*.js']
   },
   templates: {
     app: {
-        files: ['src/jade/index.jade'],
-        watch: ['src/jade/index.jade', hidden_files]
+        files: ['jade/index.jade'],
+        watch: ['jade/index.jade', hidden_files]
     },
     views: {
-        files: ['src/jade/views/*.jade', 'jade/views/**/*.jade', ignored_files],
-        watch: ['src/jade/views/**/*.jade']
+        files: ['jade/views/*.jade', 'jade/views/**/*.jade', ignored_files],
+        watch: ['jade/views/**/*.jade']
     },
     pages: {
-        files: ['src/jade/pages/*.jade'],
-        watch: ['src/jade/pages/**/*.jade']
+        files: ['jade/pages/*.jade'],
+        watch: ['jade/pages/**/*.jade']
     }
   },
   styles: {
     app: {
-        main: ['src/less/app.less'],
-        dir:  'src/less',
-        watch: ['src/less/**/*.less']
+        main: ['less/app.less'],
+        dir:  'less',
+        watch: ['less/**/*.less']
     }
   }
 };
