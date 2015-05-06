@@ -1,10 +1,8 @@
 /*!
  * 
- * eLibrary - Bootstrap Admin Theme + AngularJS
+ * eLibrary - Bootstrap + AngularJS
  * 
- * Author: @geedmo
- * Website: http://geedmo.com
- * License: http://themeforest.net/licenses/standard?license=regular
+ * Author: Team UI/UX SHUTTLE
  * 
  */
 
