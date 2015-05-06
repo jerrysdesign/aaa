@@ -16,8 +16,8 @@ dist
 # bootstrap_angularjs
 #=========================
 
-#master/bower_components/**/*
-#master/node_modules/**/*
+master/bower_components/**/*
+master/node_modules/**/*
 
 
 #—————————————————————————
