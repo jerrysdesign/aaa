@@ -1,5 +1,5 @@
 h3 電子書流通服務平台管理
-  small Pure angular functional tables
+  //- small Pure angular functional tables
 
 .container-fluid(ng-controller="PacManagerTableController as table")
 
@@ -24,30 +24,36 @@ h3 電子書流通服務平台管理
   //-         td(data-title="'Name'", filter="{ 'name': 'text' }") {{user.name}}
   //-         td(data-title="'Age'", filter="{ 'age': 'text' }") {{user.age}}
 
-  //- .panel.panel-default
-  //-   .panel-heading
-  //-     button.pull-right.btn-sm.btn.btn-default(ng-click='table.tableParams3.data[1].$selected = true') Select 2nd Row
-  //-     .panel-title Select Rows
-
-  //-   table.table.ng-table-rowselected(ng-table='table.tableParams3')
-  //-     tr(ng-repeat='user in $data', ng-click='user.$selected = !user.$selected; changeSelection(user)', ng-class="{'active': user.$selected}")
-  //-       td(data-title="'Name'") {{user.name}}
-  //-       td(data-title="'Age'") {{user.age}}
-  //-   .panel-body
-  //-     strong Selected users:
-  //-     | {{ table.data | filter:{"$selected": true} }}
-
-
   .panel.panel-default
     .panel-heading
-      a.pull-right.btn.btn-sm.btn-primary(ng-mousedown='csv.generate()', ng-href='{{ csv.link() }}', download='test.csv') Export to CSV
-      .panel-title Table Export
-    .table-responsive
-      table.table.table-bordered.table-striped(ng-table='table.tableParams4', export-csv='csv')
-        tbody
-          tr(ng-repeat='user in $data')
-            td(data-title="'Name'") {{user.name}}
-            td(data-title="'Age'") {{user.age}}
+      button.pull-right.btn-sm.btn.btn-default(ng-click='table.tableParams3.data[1].$selected = true') Select 2nd Row
+      .panel-title Select Rows
+
+    table.table.ng-table-rowselected(ng-table='table.tableParams3')
+      tbody
+        tr(ng-repeat='user in $data', ng-click='user.$selected = !user.$selected; changeSelection(user)', ng-class="{'active': user.$selected}")
+          td(data-title="'名稱'", sortable="'title'") {{user.title}}
+          td(data-title="'類別'", sortable="'type'") {{user.type}}
+          td(data-title="'分享/被分享'", sortable="'share1'") {{user.share1}} / {{user.share2}}
+          td(data-title="'帳號上限'", sortable="'upperlimit'") {{user.upperlimit}}
+          td(data-title="'啟用狀態'", sortable="'enablestate'") {{user.enablestate}}
+          td(data-title="'編輯'")
+            a(href='javascript:;') {{user.edit}}
+    .panel-body
+      strong Selected users:
+      | {{ table.data | filter:{"$selected": true} }}
+
+
+  //- .panel.panel-default
+  //-   .panel-heading
+  //-     a.pull-right.btn.btn-sm.btn-primary(ng-mousedown='csv.generate()', ng-href='{{ csv.link() }}', download='test.csv') Export to CSV
+  //-     .panel-title Table Export
+  //-   .table-responsive
+  //-     table.table.table-bordered.table-striped(ng-table='table.tableParams4', export-csv='csv')
+  //-       tbody
+  //-         tr(ng-repeat='user in $data')
+  //-           td(data-title="'Name'") {{user.name}}
+  //-           td(data-title="'Age'") {{user.age}}
 
 //- include ../layouts/mixin/mixin-lorem-ipsum.jade
 
