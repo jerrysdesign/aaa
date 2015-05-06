@@ -271,6 +271,12 @@ App.config(['$stateProvider','$urlRouterProvider', '$controllerProvider', '$comp
         //     }
         //   )
         // })
+        .state('app.pac-manager', {
+            url: '/pac-manager',
+            templateUrl: basepath('pac-manager.html'),
+            controller: 'NullController',
+            resolve: requireDeps('ngTable', 'ngTableExport')
+        })
         ;
 
 
