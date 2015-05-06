@@ -107,7 +107,6 @@
 		"icon": "icon-stack",
 		"subnav": [
 			{ "text": "Home",             "sref": "app.home", "translate": "HOME" },
-			{ "text": "ngTables", "sref": "app.table-ngtable" },
 			{ "text": "Pac Manager", "sref": "app.pac-manager" }
 		],
 		"translate": "AAA"
