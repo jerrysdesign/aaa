@@ -1837,43 +1837,6 @@ App.directive('climacon', function(){
     }
   };
 });
-App.service('language', ["$translate", function($translate) {
-  'use strict';
-  // Internationalization
-  // ----------------------
-
-  var Language = {
-    data: {
-      // Handles language dropdown
-      listIsOpen: false,
-      // list of available languages
-      available: {
-        'en':    'English',
-        'zh-tw': '繁體中文',
-        'zh-cn': '中国简体'
-      },
-      selected: '繁體中文'
-    },
-    // display always the current ui language
-    init: function () {
-      var proposedLanguage = $translate.proposedLanguage() || $translate.use();
-      var preferredLanguage = $translate.preferredLanguage(); // we know we have set a preferred one in App.config
-      this.data.selected = this.data.available[ (proposedLanguage || preferredLanguage) ];
-      return this.data;
-
-    },
-    set: function (localeId, ev) {
-      // Set the new idiom
-      $translate.use(localeId);
-      // save a reference for the current language
-      this.data.selected = this.data.available[localeId];
-      // finally toggle dropdown
-      this.data.listIsOpen = ! this.data.listIsOpen;
-    }
-  };
-
-  return Language;
-}]);
 /**=========================================================
  * Module: HeaderNavController
  * Controls the header navigation
@@ -1942,6 +1905,43 @@ App.controller('SummaryController', ["$scope", "colors", function($scope, colors
   $scope.sparkData2 = [1,2,3,4,5,6,7,8,9];
   $scope.sparkData3 = [1,2,3,4,5,6,7,8,9];
 
+}]);
+App.service('language', ["$translate", function($translate) {
+  'use strict';
+  // Internationalization
+  // ----------------------
+
+  var Language = {
+    data: {
+      // Handles language dropdown
+      listIsOpen: false,
+      // list of available languages
+      available: {
+        'en':    'English',
+        'zh-tw': '繁體中文',
+        'zh-cn': '中国简体'
+      },
+      selected: '繁體中文'
+    },
+    // display always the current ui language
+    init: function () {
+      var proposedLanguage = $translate.proposedLanguage() || $translate.use();
+      var preferredLanguage = $translate.preferredLanguage(); // we know we have set a preferred one in App.config
+      this.data.selected = this.data.available[ (proposedLanguage || preferredLanguage) ];
+      return this.data;
+
+    },
+    set: function (localeId, ev) {
+      // Set the new idiom
+      $translate.use(localeId);
+      // save a reference for the current language
+      this.data.selected = this.data.available[localeId];
+      // finally toggle dropdown
+      this.data.listIsOpen = ! this.data.listIsOpen;
+    }
+  };
+
+  return Language;
 }]);
 /**=========================================================
  * Module: GoogleMapController.js

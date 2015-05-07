@@ -4,7 +4,6 @@
 		"type": "heading",
 		"translate": "sidebar.heading.HEADER"
 	},
-
 	{
 		"type": "separator"
 	},
@@ -22,6 +21,25 @@
 		],
 		"translate": "sidebar.nav.aaa.AAA"
 	},
+	{
+		"type": "separator"
+	},
+	{
+		"text": "Pages",
+		"sref": "#",
+		"icon": "icon-stack",
+		"subnav": [
+			{ "text": "Login",            "sref": "page.login", "translate": "sidebar.nav.pages.LOGIN" },
+			{ "text": "Sign up",          "sref": "page.register", "translate": "sidebar.nav.pages.REGISTER" },
+			{ "text": "Recover Password", "sref": "page.recover", "translate": "sidebar.nav.pages.RECOVER" },
+			{ "text": "Lock",             "sref": "page.lock", "translate": "sidebar.nav.pages.LOCK" },
+			{ "text": "Search",           "sref": "app.search", "translate": "sidebar.nav.pages.SEARCH" }
+		],
+		"translate": "sidebar.nav.pages.PAGES"
+	},
+	{
+    "type": "separator"
+  },
 	{
 	"text": "Components",
 	"sref": "#",
@@ -77,16 +95,6 @@
     "alert": {"text":"12", "class": "label-success"}
   },
   {
-    "text": "Maps",
-    "sref": "#",
-    "icon": "icon-map",
-    "subnav": [
-      {"text": "Google Maps",   "sref": "app.maps-google", "translate": "sidebar.nav.map.GOOGLE" },
-      {"text": "Vector Maps",   "sref": "app.maps-vector", "translate": "sidebar.nav.map.VECTOR" }
-    ],
-    "translate": "sidebar.nav.map.MAP"
-  },
-  {
     "text": "Icons",
     "sref": "#",
     "icon": "icon-play",
@@ -98,21 +106,5 @@
   },
   {
 	"type": "separator"
-  },
-	{
-		"text": "Pages",
-		"sref": "#",
-		"icon": "icon-stack",
-		"subnav": [
-			{ "text": "Login",            "sref": "page.login", "translate": "sidebar.nav.pages.LOGIN" },
-			{ "text": "Sign up",          "sref": "page.register", "translate": "sidebar.nav.pages.REGISTER" },
-			{ "text": "Recover Password", "sref": "page.recover", "translate": "sidebar.nav.pages.RECOVER" },
-			{ "text": "Lock",             "sref": "page.lock", "translate": "sidebar.nav.pages.LOCK" },
-			{ "text": "Search",           "sref": "app.search", "translate": "sidebar.nav.pages.SEARCH" }
-		],
-		"translate": "sidebar.nav.pages.PAGES"
-	},
-	{
-		"type": "separator"
-	}
+  }
 ]
