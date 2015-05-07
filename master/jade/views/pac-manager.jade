@@ -3,34 +3,15 @@ h3 電子書流通服務平台管理
 
 .container-fluid(ng-controller="PacManagerTableController as table")
 
-	//- .panel.panel-default
-	//-   .panel-heading
-	//-     button.pull-right.btn.btn-default.btn-sm(ng-click='table.tableParams.sorting({})') Clear sorting
-	//-     .panel-title Sorting
-	//-   table.table.table-bordered.table-striped(ng-table='table.tableParams')
-	//-     tbody
-	//-       tr(ng-repeat='user in $data')
-	//-         td(data-title="'Name'", sortable="'name'") {{user.name}}
-	//-         td(data-title="'Age'", sortable="'age'") {{user.age}}
-	//-         td(data-title="'Money'", sortable="'money'")
-	//-           span(ng-class="{ 'plus': user.money >= 0,'minus': user.money < 0 }") {{user.money}}
-
-	//- .panel.panel-default
-	//-   .panel-heading
-	//-     .panel-title Filters
-	//-   table.table.table-bordered.table-striped(ng-table='table.tableParams2', show-filter='true')
-	//-     tbody
-	//-       tr(ng-repeat='user in $data')
-	//-         td(data-title="'Name'", filter="{ 'name': 'text' }") {{user.name}}
-	//-         td(data-title="'Age'", filter="{ 'age': 'text' }") {{user.age}}
-
 	.panel.panel-default
-		.panel-heading.clearfix
+		.panel-heading.clearfix(ng-controller='ModalController')
 			.pull-right
 				button.btn-sm.btn.btn-default(ng-click='table.tableParams3.data[1].$selected = true') Select 2nd Row
+				//- setSelectedXXX(0, 5)
 			.panel-title
 				// Modal inline template
-				script(type='text/ng-template', id='/myModalContent.html')
+				// New
+				script(type='text/ng-template', id='/newPmDateModalContent.html')
 					.modal-header
 						button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
 						h4#myModalLabel.modal-title Modal title
@@ -39,11 +20,33 @@ h3 電子書流通服務平台管理
 					.modal-footer
 						button.btn.btn-primary(ng-click='ok()') OK
 						button.btn.btn-warning(ng-click='cancel()') Cancel
+				// Delete
+				script(type='text/ng-template', id='/delPmDateModalContent.html')
+					.modal-header
+						button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+						h4#myModalLabel.modal-title 刪除帳號
+					.modal-body
+						| 確認刪除這 N 筆 PAC 帳號?
+					.modal-footer
+						button.btn.btn-warning(ng-click='cancel()') 取消
+						button.btn.btn-primary(ng-click='ok()') 確認
+				// Example
+				script(type='text/ng-template', id='/myModalContent.html')
+					.modal-header
+						button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+						h4#myModalLabel.modal-title 刪除帳號
+					.modal-body
+						| 確認刪除這 N 筆 PAC 帳號?
+					.modal-footer
+						button.btn.btn-warning(ng-click='cancel()') 取消
+						button.btn.btn-primary(ng-click='ok()') 確認
+
+
 			//- p 新增/刪除
 			// Button trigger modal 
-			.pull-left(ng-controller='ModalController')
+			.pull-left
 				button.btn.btn-default.btn-sm(ng-click='open()') 新增
-				button.btn.btn-default.btn-sm(ng-click='open()') 刪除
+				button.btn.btn-default.btn-sm(ng-click='open(\'sm\')') 刪除
 
 		table.table.ng-table-rowselected(ng-table='table.tableParams3')
 			tbody
@@ -59,17 +62,6 @@ h3 電子書流通服務平台管理
 			strong Selected users:
 			| {{ table.data | filter:{"$selected": true} }}
 
-
-	//- .panel.panel-default
-	//-   .panel-heading
-	//-     a.pull-right.btn.btn-sm.btn-primary(ng-mousedown='csv.generate()', ng-href='{{ csv.link() }}', download='test.csv') Export to CSV
-	//-     .panel-title Table Export
-	//-   .table-responsive
-	//-     table.table.table-bordered.table-striped(ng-table='table.tableParams4', export-csv='csv')
-	//-       tbody
-	//-         tr(ng-repeat='user in $data')
-	//-           td(data-title="'Name'") {{user.name}}
-	//-           td(data-title="'Age'") {{user.age}}
 
 //- include ../layouts/mixin/mixin-lorem-ipsum.jade
 

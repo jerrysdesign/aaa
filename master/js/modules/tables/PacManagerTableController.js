@@ -144,32 +144,39 @@ function PacManagerTableController($scope, $filter, ngTableParams) {
   // EXPORT CSV
   // -----------------------------------  
 
-  var data4 = [{name: "Moroni", age: 50},
-      {name: "Tiancum", age: 43},
-      {name: "Jacob", age: 27},
-      {name: "Nephi", age: 29},
-      {name: "Enos", age: 34},
-      {name: "Tiancum", age: 43},
-      {name: "Jacob", age: 27},
-      {name: "Nephi", age: 29},
-      {name: "Enos", age: 34},
-      {name: "Tiancum", age: 43},
-      {name: "Jacob", age: 27},
-      {name: "Nephi", age: 29},
-      {name: "Enos", age: 34},
-      {name: "Tiancum", age: 43},
-      {name: "Jacob", age: 27},
-      {name: "Nephi", age: 29},
-      {name: "Enos", age: 34}];
+  // var data4 = [{name: "Moroni", age: 50},
+  //     {name: "Tiancum", age: 43},
+  //     {name: "Jacob", age: 27},
+  //     {name: "Nephi", age: 29},
+  //     {name: "Enos", age: 34},
+  //     {name: "Tiancum", age: 43},
+  //     {name: "Jacob", age: 27},
+  //     {name: "Nephi", age: 29},
+  //     {name: "Enos", age: 34},
+  //     {name: "Tiancum", age: 43},
+  //     {name: "Jacob", age: 27},
+  //     {name: "Nephi", age: 29},
+  //     {name: "Enos", age: 34},
+  //     {name: "Tiancum", age: 43},
+  //     {name: "Jacob", age: 27},
+  //     {name: "Nephi", age: 29},
+  //     {name: "Enos", age: 34}];
 
-  vm.tableParams4 = new ngTableParams({
-      page: 1,            // show first page
-      count: 10           // count per page
-  }, {
-      total: data4.length, // length of data4
-      getData: function($defer, params) {
-          $defer.resolve(data4.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-      }
-  });
+  // vm.tableParams4 = new ngTableParams({
+  //     page: 1,            // show first page
+  //     count: 10           // count per page
+  // }, {
+  //     total: data4.length, // length of data4
+  //     getData: function($defer, params) {
+  //         $defer.resolve(data4.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+  //     }
+  // });
+
+  // SetSelected
+  // function setSelectedXXX( start=0 , end=10 ){
+  //   for(var i=start ;i<=end; i++){
+  //     table.tableParams3.data[i].$selected = true
+  //   } 
+  // }
 
 }
