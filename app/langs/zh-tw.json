@@ -64,7 +64,11 @@
       "aaa": {
         "AAA": "AAA",
         "HOME": "首頁",
-        "PAC Manager": "PAC Manager"
+        "PAC Manager": "PAC Manager",
+        "Supplier Manager": "Supplier Manager",
+        "Account Manager": "Account Manager",
+        "Device Manager": "Device Manager",
+        "RECOVER": "忘記密碼"
       }
     }
   }

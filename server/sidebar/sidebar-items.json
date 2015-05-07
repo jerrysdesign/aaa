@@ -14,7 +14,11 @@
 		"icon": "icon-stack",
 		"subnav": [
 			{ "text": "Home", "sref": "app.home", "translate": "HOME" },
-			{ "text": "Pac Manager", "sref": "app.pac-manager" }
+			{ "text": "Pac Manager", "sref": "app.pac-manager" },
+			{ "text": "Supplier manager", "sref": "app.template" },
+			{ "text": "Account manager", "sref": "app.template" },
+			{ "text": "Device manager", "sref": "app.template" },
+			{ "text": "Forget password", "sref": "page.recover", "translate": "sidebar.nav.aaa.RECOVER" }
 		],
 		"translate": "sidebar.nav.aaa.AAA"
 	},

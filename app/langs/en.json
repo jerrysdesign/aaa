@@ -64,7 +64,11 @@
       "aaa": {
         "AAA": "AAA",
         "HOME": "Home",
-        "PAC Manager": "PAC Manager"
+        "PAC Manager": "PAC Manager",
+        "Supplier Manager": "Supplier Manager",
+        "Account Manager": "Account Manager",
+        "Device Manager": "Device Manager",
+        "RECOVER": "Forget password"
       }
     }
   }
