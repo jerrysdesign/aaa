@@ -2,14 +2,18 @@ h3 電子書流通服務平台管理
 	//- small Pure angular functional tables
 
 .container-fluid(ng-controller="PacManagerTableController as table")
+	form
+		//- .form-group
+			input.form-control(type="text", placeholder='Search')
+		.form-group
+			.input-group
+				input.form-control(type="text")
+				span.input-group-btn
+					button.btn.btn-default(type="button") Search
 
 	.panel.panel-default
-		.panel-heading.clearfix(ng-controller='ModalController')
-			.pull-right
-				button.btn-sm.btn.btn-default(ng-click='table.tableParams3.data[1].$selected = true') Select 2nd Row
-				//- setSelectedXXX(0, 5)
-			.panel-title
-				// Modal inline template
+		.panel-heading(ng-controller='ModalController')
+			.row
 				// New
 				script(type='text/ng-template', id='/newPmDateModalContent.html')
 					.modal-header
@@ -40,13 +44,18 @@ h3 電子書流通服務平台管理
 					.modal-footer
 						button.btn.btn-warning(ng-click='cancel()') 取消
 						button.btn.btn-primary(ng-click='ok()') 確認
+				
+				.col-md-4
+					//- p 新增/刪除
+					// Button trigger modal 
+					.pull-left
+						button.btn.btn-default.btn-sm(ng-click='open()') 新增
+						button.btn.btn-default.btn-sm(ng-click='open(\'sm\')') 刪除
+					// Modal inline template
 
-
-			//- p 新增/刪除
-			// Button trigger modal 
-			.pull-left
-				button.btn.btn-default.btn-sm(ng-click='open()') 新增
-				button.btn.btn-default.btn-sm(ng-click='open(\'sm\')') 刪除
+				.col-md-8
+					// button.btn-sm.btn.btn-default(ng-click='table.tableParams3.data[1].$selected = true') Select 2nd Row
+					//- setSelectedXXX(0, 5)
 
 		table.table.ng-table-rowselected(ng-table='table.tableParams3')
 			tbody
