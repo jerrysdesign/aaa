@@ -9,6 +9,16 @@
 		"type": "separator"
 	},
 	{
+		"text": "aaa",
+		"sref": "#",
+		"icon": "icon-stack",
+		"subnav": [
+			{ "text": "Home", "sref": "app.home", "translate": "HOME" },
+			{ "text": "Pac Manager", "sref": "app.pac-manager" }
+		],
+		"translate": "sidebar.nav.aaa.AAA"
+	},
+	{
 	"text": "Components",
 	"sref": "#",
 	"icon": "icon-box",
@@ -100,15 +110,5 @@
 	},
 	{
 		"type": "separator"
-	},
-	{
-		"text": "aaa",
-		"sref": "#",
-		"icon": "icon-stack",
-		"subnav": [
-			{ "text": "Home", "sref": "app.home", "translate": "HOME" },
-			{ "text": "Pac Manager", "sref": "app.pac-manager" }
-		],
-		"translate": "sidebar.nav.aaa.AAA"
 	}
 ]
