@@ -30,9 +30,7 @@
 		"icon": "icon-stack",
 		"subnav": [
 			{ "text": "Login",            "sref": "page.login", "translate": "sidebar.nav.pages.LOGIN" },
-			{ "text": "Sign up",          "sref": "page.register", "translate": "sidebar.nav.pages.REGISTER" },
 			{ "text": "Recover Password", "sref": "page.recover", "translate": "sidebar.nav.pages.RECOVER" },
-			{ "text": "Lock",             "sref": "page.lock", "translate": "sidebar.nav.pages.LOCK" },
 			{ "text": "Search",           "sref": "app.search", "translate": "sidebar.nav.pages.SEARCH" }
 		],
 		"translate": "sidebar.nav.pages.PAGES"
