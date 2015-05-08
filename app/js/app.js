@@ -1837,6 +1837,43 @@ App.directive('climacon', function(){
     }
   };
 });
+App.service('language', ["$translate", function($translate) {
+  'use strict';
+  // Internationalization
+  // ----------------------
+
+  var Language = {
+    data: {
+      // Handles language dropdown
+      listIsOpen: false,
+      // list of available languages
+      available: {
+        'en':    'English',
+        'zh-tw': '繁體中文',
+        'zh-cn': '中国简体'
+      },
+      selected: '繁體中文'
+    },
+    // display always the current ui language
+    init: function () {
+      var proposedLanguage = $translate.proposedLanguage() || $translate.use();
+      var preferredLanguage = $translate.preferredLanguage(); // we know we have set a preferred one in App.config
+      this.data.selected = this.data.available[ (proposedLanguage || preferredLanguage) ];
+      return this.data;
+
+    },
+    set: function (localeId, ev) {
+      // Set the new idiom
+      $translate.use(localeId);
+      // save a reference for the current language
+      this.data.selected = this.data.available[localeId];
+      // finally toggle dropdown
+      this.data.listIsOpen = ! this.data.listIsOpen;
+    }
+  };
+
+  return Language;
+}]);
 /**=========================================================
  * Module: HeaderNavController
  * Controls the header navigation
@@ -1905,43 +1942,6 @@ App.controller('SummaryController', ["$scope", "colors", function($scope, colors
   $scope.sparkData2 = [1,2,3,4,5,6,7,8,9];
   $scope.sparkData3 = [1,2,3,4,5,6,7,8,9];
 
-}]);
-App.service('language', ["$translate", function($translate) {
-  'use strict';
-  // Internationalization
-  // ----------------------
-
-  var Language = {
-    data: {
-      // Handles language dropdown
-      listIsOpen: false,
-      // list of available languages
-      available: {
-        'en':    'English',
-        'zh-tw': '繁體中文',
-        'zh-cn': '中国简体'
-      },
-      selected: '繁體中文'
-    },
-    // display always the current ui language
-    init: function () {
-      var proposedLanguage = $translate.proposedLanguage() || $translate.use();
-      var preferredLanguage = $translate.preferredLanguage(); // we know we have set a preferred one in App.config
-      this.data.selected = this.data.available[ (proposedLanguage || preferredLanguage) ];
-      return this.data;
-
-    },
-    set: function (localeId, ev) {
-      // Set the new idiom
-      $translate.use(localeId);
-      // save a reference for the current language
-      this.data.selected = this.data.available[localeId];
-      // finally toggle dropdown
-      this.data.listIsOpen = ! this.data.listIsOpen;
-    }
-  };
-
-  return Language;
 }]);
 /**=========================================================
  * Module: GoogleMapController.js
@@ -3035,33 +3035,40 @@ function PacManagerTableController($scope, $filter, ngTableParams) {
   // EXPORT CSV
   // -----------------------------------  
 
-  var data4 = [{name: "Moroni", age: 50},
-      {name: "Tiancum", age: 43},
-      {name: "Jacob", age: 27},
-      {name: "Nephi", age: 29},
-      {name: "Enos", age: 34},
-      {name: "Tiancum", age: 43},
-      {name: "Jacob", age: 27},
-      {name: "Nephi", age: 29},
-      {name: "Enos", age: 34},
-      {name: "Tiancum", age: 43},
-      {name: "Jacob", age: 27},
-      {name: "Nephi", age: 29},
-      {name: "Enos", age: 34},
-      {name: "Tiancum", age: 43},
-      {name: "Jacob", age: 27},
-      {name: "Nephi", age: 29},
-      {name: "Enos", age: 34}];
+  // var data4 = [{name: "Moroni", age: 50},
+  //     {name: "Tiancum", age: 43},
+  //     {name: "Jacob", age: 27},
+  //     {name: "Nephi", age: 29},
+  //     {name: "Enos", age: 34},
+  //     {name: "Tiancum", age: 43},
+  //     {name: "Jacob", age: 27},
+  //     {name: "Nephi", age: 29},
+  //     {name: "Enos", age: 34},
+  //     {name: "Tiancum", age: 43},
+  //     {name: "Jacob", age: 27},
+  //     {name: "Nephi", age: 29},
+  //     {name: "Enos", age: 34},
+  //     {name: "Tiancum", age: 43},
+  //     {name: "Jacob", age: 27},
+  //     {name: "Nephi", age: 29},
+  //     {name: "Enos", age: 34}];
 
-  vm.tableParams4 = new ngTableParams({
-      page: 1,            // show first page
-      count: 10           // count per page
-  }, {
-      total: data4.length, // length of data4
-      getData: function($defer, params) {
-          $defer.resolve(data4.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-      }
-  });
+  // vm.tableParams4 = new ngTableParams({
+  //     page: 1,            // show first page
+  //     count: 10           // count per page
+  // }, {
+  //     total: data4.length, // length of data4
+  //     getData: function($defer, params) {
+  //         $defer.resolve(data4.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+  //     }
+  // });
+
+  // SetSelected
+  // function setSelectedXXX( start=0 , end=10 ){
+  //   for(var i=start ;i<=end; i++){
+  //     table.tableParams3.data[i].$selected = true
+  //   } 
+  // }
 
 }
 PacManagerTableController.$inject = ["$scope", "$filter", "ngTableParams"];
