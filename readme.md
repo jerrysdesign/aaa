@@ -443,6 +443,7 @@ Credits
 <h4 class="mt0">Font  </h4>
 
 [Open Sans](https://github.com/FontFaceKit/open-sans)
+[cwTeXHei](https://www.google.com/fonts/earlyaccess)
 <br>
 
 <h4>Demo images </h4>
