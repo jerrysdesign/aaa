@@ -2,7 +2,7 @@
 nav.navbar.topnavbar(role='navigation', ng-controller="HeaderNavController")
 	// START navbar header
 	.navbar-header(ng-class="app.theme.brand")
-		a.navbar-brand(ui-sref='app.dashboard') 
+		a.navbar-brand(ui-sref='app.home') 
 			img.brand-logo(src="app/img/logo--elibrary.png", alt="App Logo")
 			img.brand-logo-collapsed(src="app/img/logo--aaa.png", alt="App Logo")
 
@@ -43,109 +43,22 @@ nav.navbar.topnavbar(role='navigation', ng-controller="HeaderNavController")
 			li.dropdown.dropdown-list
 				a.dropdown-toggle(href='#', dropdown-animate="")
 					.point-pin
-						em.icon-mail.fa-fw
-						.point.point-success.point-lg
+						em.icon-globe.fa-fw
+						//- .point.point-success.point-lg
 					span.visible-xs-inline.ml View Alerts 
-					//- .label.label-warning 3
-				// START Dropdown menu
 				ul.dropdown-menu.fadeInLeft2.animated(offcanvas-dropdown="")
-					// START list item
-					li(ng-init="offcontent1 = true", ng-click="cancel($event)")
+					li(ng-init="offcontent1 = true")
 						a.p(href='#', ng-click="offcontent1 = false")
-							// START media preview
 							.media
-								.pull-left
-									.point-pin
-										img.img-responsive.thumb32.img-circle(src="app/img/user/03.jpg", alt="user msg")
-										.point.point-success.point-lg
 								.media-body.clearfix
-										p.m0 Cooper
-										p.m0.text-gray.text-sm 5 minutes ago
-						// START offcanves content
-						.offcanvas-content.p(ng-hide="offcontent1", ng-click="cancel($event)")
-							.offcanvas-toggle.pull-right.text-gray
-								em.fa.fa-times(ng-click="offcontent1 = true")
-							.media.mt0.mb.clearfix
-								.pull-left
-									.point-pin
-										img.img-responsive.thumb32.img-circle(src="app/img/user/03.jpg", alt="user msg")
-										.point.point-success.point-lg
-								.media-body.clearfix
-										p.m0 Cooper
-										p.m0.text-gray.text-sm 5 minutes ago
-							p: em 疑菲船槍擊台漁民枉死，山獅被看門狗追，因韓方今在媒體有善意澄清回應，你會不三七二十一、七七四十九，任何議題問名嘴，北中南都有零星災情傳出，的行為，雨真的很大
-					// START list item
-					li(ng-init="offcontent2 = true", ng-click="cancel($event)").bt
+									p.m0.text-gray.text-sm English
+					li(ng-init="offcontent2 = true")
 						a.p(href='#', ng-click="offcontent2 = false")
-							// START media preview
 							.media
-								.pull-left
-									.point-pin
-										img.img-responsive.thumb32.img-circle(src="app/img/user/04.jpg", alt="user msg")
-										.point.point-warning.point-lg
 								.media-body.clearfix
-										p.m0 KyleJi
-										p.m0.text-gray.text-sm 45 minutes ago
-						// START offcanves content
-						.offcanvas-content.p(ng-hide="offcontent2", ng-click="cancel($event)")
-							.offcanvas-toggle.pull-right.text-gray
-								em.fa.fa-times(ng-click="offcontent2 = true")
-							.media.mt0.mb.clearfix
-								.pull-left
-									.point-pin
-										img.img-responsive.thumb32.img-circle(src="app/img/user/04.jpg", alt="user msg")
-										.point.point-warning.point-lg
-								.media-body.clearfix
-										p.m0 KyleJi
-										p.m0.text-gray.text-sm 45 minutes ago
-							p: em 他就是林書豪！前情侶臉書鬧翻，65萬人大考，嗯，並試圖冷處理他的訴求，鋼鐵車??3人清理化糞池，並試圖冷處理他的訴求，AV女優大學開講，但記者訪問時，一直按重播，真有心...世界最矮的男人 
-					// START list item
-					li(ng-init="offcontent3 = true", ng-click="cancel($event)").bt
+									p.m0.text-gray.text-sm 簡體中文
+					li(ng-init="offcontent3 = true")
 						a.p(href='#', ng-click="offcontent3 = false")
-							// START media preview
 							.media
-								.pull-left
-									.point-pin
-										img.img-responsive.thumb32.img-circle(src="app/img/user/05.jpg", alt="user msg")
-										.point.point-danger.point-lg
 								.media-body.clearfix
-										p.m0 UU
-										p.m0.text-gray.text-sm yesterday
-						// START offcanves content
-						.offcanvas-content.p(ng-hide="offcontent3", ng-click="cancel($event)")
-							.offcanvas-toggle.pull-right.text-gray
-								em.fa.fa-times(ng-click="offcontent3 = true")
-							.media.mt0.mb.clearfix
-								.pull-left
-									.point-pin
-										img.img-responsive.thumb32.img-circle(src="app/img/user/05.jpg", alt="user msg")
-										.point.point-danger.point-lg
-								.media-body.clearfix
-										p.m0 UU
-										p.m0.text-gray.text-sm yesterday
-							p: em 當絕大多數國家主人主張停建核四，請粉絲們持續留意各項報導，這將會是一部在一片霧茫茫的片段中考驗觀眾眼力的影片 
-					// START last list item
-					li.text-center(ng-init="offcontent3 = true").bt
-						a.p(ui-sref='app.mailbox.folder.list'): small View All
-
-			// Fullscreen (only desktops)
-			// li.visible-lg
-			// 	a(href='#', toggle-fullscreen)
-			// 		em.fa.fa-expand
-			// START lock screen
-			// li
-			// 	a(ui-sref="page.lock", title="Lock screen")
-			// 		em.icon-lock.fa-fw
-			// 		span.visible-xs-inline.ml Lock Screen 
-			// END lock screen
-
-
-
-
-			// END Alert menu
-		// END Right Navbar
-	// END Nav wrapper
-
-
-
-// END Top Navbar
+									p.m0.text-gray.text-sm 繁體中文
